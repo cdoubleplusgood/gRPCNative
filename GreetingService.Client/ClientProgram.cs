@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Remoting.Channels;
-using System.Text;
 using System.Threading.Tasks;
 using GreetingService.Common;
 using Grpc.Core;
@@ -12,15 +8,7 @@ namespace GreetingService.Client
 {
     internal class ClientProgram
     {
-        static void Main()
-        {
-            TestGreetingService().Wait();
-
-            Console.WriteLine("The client will stop now.");
-            Console.ReadKey();
-        }
-
-        static async Task TestGreetingService()
+        static async Task Main()
         {
             var request = new GreetingRequest
             {
@@ -35,12 +23,17 @@ namespace GreetingService.Client
             try
             {
                 var greetingService = channel.CreateGrpcService<IGreetingService>();
+                Console.WriteLine($"GreetRequest: {request.Greeting.FirstName} {request.Greeting.LastName}");
                 var response = await greetingService.Greet(request);
+                Console.WriteLine($"GreetResponse: {response.Response}");
             }
             finally
             {
                 await channel.ShutdownAsync();
             }
+
+            Console.WriteLine("The client will stop now.");
+            Console.ReadKey();
         }
     }
 }
