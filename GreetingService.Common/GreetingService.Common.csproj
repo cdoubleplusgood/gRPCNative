@@ -79,6 +79,7 @@
     <Compile Include="GreetingRequest.cs" />
     <Compile Include="GreetingResponse.cs" />
     <Compile Include="GreetingService.cs" />
+    <Compile Include="GreetOftenRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
