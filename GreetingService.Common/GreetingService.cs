@@ -10,5 +10,7 @@ namespace GreetingService.Common
         Task<GreetingResponse> Greet(GreetingRequest request);
 
         IAsyncEnumerable<GreetingResponse> GreetOften(GreetOftenRequest request);
+
+        Task<GreetingResponse> GreetAll(IAsyncEnumerable<GreetingRequest> requests);
     }
 }

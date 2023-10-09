@@ -37,5 +37,24 @@ namespace GreetingService.Server
                 yield return response;
             }
         }
+
+        public async Task<GreetingResponse> GreetAll(IAsyncEnumerable<GreetingRequest> requests)
+        {
+            Console.WriteLine("GreetAll");
+            var greetings = new List<Greeting>();
+            await foreach (var request in requests)
+            {
+                Console.WriteLine($"GreetRequest: {request.Greeting.FirstName} {request.Greeting.LastName}");
+                greetings.Add(request.Greeting);
+            }
+
+            var answer = string.Join(", ", greetings.Select(g => $"{g.FirstName} {g.LastName}"));
+            var response = new GreetingResponse
+            {
+                Response = $"Hello {answer}"
+            };
+            Console.WriteLine($"GreetResponse: {response.Response}");
+            return response;
+        } 
     }
 }

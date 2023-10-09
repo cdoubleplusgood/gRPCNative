@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using GreetingService.Common;
 using Grpc.Core;
@@ -50,6 +51,17 @@ namespace GreetingService.Client
                 {
                     Console.WriteLine($"GreetResponse: {response2.Response}");
                 }
+
+                var greetingRequests = new List<GreetingRequest>
+                {
+                    new GreetingRequest { Greeting = { FirstName = "Peter", LastName = "Parker" } },
+                    new GreetingRequest { Greeting = { FirstName = "Tony", LastName = "Stark" } },
+                    new GreetingRequest { Greeting = { FirstName = "Steve", LastName = "Rogers" } }
+                };
+                Console.WriteLine("GreetAll");
+                var greetAllResponse =
+                    await greetingService.GreetAll(ToAsyncEnumerable(greetingRequests));
+                Console.WriteLine($"GreetResponse: {greetAllResponse.Response}");
             }
             finally
             {
@@ -58,6 +70,17 @@ namespace GreetingService.Client
 
             Console.WriteLine("The client will stop now.");
             Console.ReadKey();
+        }
+
+        static async IAsyncEnumerable<T> ToAsyncEnumerable<T>(IEnumerable<T> items)
+        {
+            foreach (var item in items)
+            {
+                // This is mainly to avoid the warning about the seemingly unnecessary "async",
+                // but it is required!
+                await Task.Delay(TimeSpan.FromSeconds(1));
+                yield return item;
+            }
         }
     }
 }
