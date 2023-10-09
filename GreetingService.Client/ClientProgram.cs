@@ -15,6 +15,9 @@ namespace GreetingService.Client
         static void Main()
         {
             TestGreetingService().Wait();
+
+            Console.WriteLine("The client will stop now.");
+            Console.ReadKey();
         }
 
         static async Task TestGreetingService()
