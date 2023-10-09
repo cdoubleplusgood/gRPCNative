@@ -60,7 +60,13 @@ namespace GreetingService.Client
                 };
                 Console.WriteLine("GreetAll");
                 var greetAllResponse =
-                    await greetingService.GreetAll(ToAsyncEnumerable(greetingRequests));
+                    await greetingService.GreetAll(ToAsyncEnumerable(greetingRequests, async g =>
+                    {
+                        Console.WriteLine("GreetRequest: " +
+                                          $"{g.Greeting.FirstName} " +
+                                          $"{g.Greeting.LastName}");
+                        await Task.Delay(TimeSpan.FromSeconds(1));
+                    }));
                 Console.WriteLine($"GreetResponse: {greetAllResponse.Response}");
             }
             finally
@@ -72,13 +78,13 @@ namespace GreetingService.Client
             Console.ReadKey();
         }
 
-        static async IAsyncEnumerable<T> ToAsyncEnumerable<T>(IEnumerable<T> items)
+        static async IAsyncEnumerable<T> ToAsyncEnumerable<T>(IEnumerable<T> items, Func<T, Task> action)
         {
             foreach (var item in items)
             {
                 // This is mainly to avoid the warning about the seemingly unnecessary "async",
                 // but it is required!
-                await Task.Delay(TimeSpan.FromSeconds(1));
+                await action(item);
                 yield return item;
             }
         }
