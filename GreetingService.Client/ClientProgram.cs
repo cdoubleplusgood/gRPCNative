@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using GreetingService.Common;
 using Grpc.Core;
@@ -11,8 +12,13 @@ namespace GreetingService.Client
     {
         static async Task Main()
         {
-            GrpcClientFactory.AllowUnencryptedHttp2 = true;
-            var channel = new Channel("localhost", 50051, ChannelCredentials.Insecure);
+            //GrpcClientFactory.AllowUnencryptedHttp2 = true;
+            var clientCert = File.ReadAllText("ssl/localhost2-chain.crt");
+            var clientKey = File.ReadAllText("ssl/localhost2.key");
+            var caCert = File.ReadAllText("ssl/dev-root-ca.crt");
+            var channelCredentials = new SslCredentials(caCert, new KeyCertificatePair(clientCert, clientKey));
+
+            var channel = new Channel("localhost", 50051, channelCredentials);
             try
             {
                 var greetingService = channel.CreateGrpcService<IGreetingService>();

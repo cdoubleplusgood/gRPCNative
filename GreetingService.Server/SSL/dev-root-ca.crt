@@ -1,0 +1,51 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            53:94:43:8f:4b:b5:b9:b9:b0:33:14:9b:04:2e:4d:cf:22:6b:3d:b0
+        Signature Algorithm: ecdsa-with-SHA256
+        Issuer: CN = Dev-Root-CA
+        Validity
+            Not Before: Oct  4 19:35:50 2023 GMT
+            Not After : Oct  5 19:35:50 2123 GMT
+        Subject: CN = Dev-Root-CA
+        Subject Public Key Info:
+            Public Key Algorithm: id-ecPublicKey
+                Public-Key: (384 bit)
+                pub:
+                    04:cd:9b:f3:87:1f:4b:8d:01:db:7b:84:39:91:b8:
+                    34:63:51:ca:57:29:be:04:c1:4b:43:99:62:5b:22:
+                    d4:ea:f2:6b:2a:a8:bd:54:0b:0f:bd:f6:0a:bd:34:
+                    37:69:4e:b2:8d:7e:7c:a8:25:6d:a4:88:57:20:d5:
+                    14:37:c3:4f:cd:7c:f1:a1:ec:34:70:5c:33:ee:d1:
+                    1a:d3:ec:a9:43:40:83:61:45:3f:4a:d5:cd:f1:3c:
+                    3e:9e:a8:3c:81:33:2d
+                ASN1 OID: secp384r1
+                NIST CURVE: P-384
+        X509v3 extensions:
+            X509v3 Basic Constraints: critical
+                CA:TRUE
+            X509v3 Key Usage: critical
+                Certificate Sign
+            X509v3 Subject Key Identifier: 
+                3C:19:F1:68:BD:70:B4:74:4B:C5:64:B5:6B:C6:55:EC:C5:8B:68:47
+    Signature Algorithm: ecdsa-with-SHA256
+    Signature Value:
+        30:64:02:30:01:7b:ab:8f:c4:1c:5e:be:6f:2e:e5:ab:41:bb:
+        0c:55:ff:5c:f3:63:3c:86:71:52:58:e1:47:f4:92:9b:fb:5d:
+        44:9c:6b:2b:50:7f:7a:9f:5a:1f:0a:d4:90:5d:25:c1:02:30:
+        7f:b0:d9:77:86:89:1d:9f:4c:0a:2a:9b:ba:f5:8a:a1:a8:d3:
+        68:fe:f5:e6:92:08:6a:e2:d5:0f:99:5a:6c:6b:54:84:82:13:
+        48:69:ab:8d:8c:86:5c:85:f4:e3:92:9b
+-----BEGIN CERTIFICATE-----
+MIIBrjCCATWgAwIBAgIUU5RDj0u1ubmwMxSbBC5NzyJrPbAwCgYIKoZIzj0EAwIw
+FjEUMBIGA1UEAwwLRGV2LVJvb3QtQ0EwIBcNMjMxMDA0MTkzNTUwWhgPMjEyMzEw
+MDUxOTM1NTBaMBYxFDASBgNVBAMMC0Rldi1Sb290LUNBMHYwEAYHKoZIzj0CAQYF
+K4EEACIDYgAEzZvzhx9LjQHbe4Q5kbg0Y1HKVym+BMFLQ5liWyLU6vJrKqi9VAsP
+vfYKvTQ3aU6yjX58qCVtpIhXINUUN8NPzXzxoew0cFwz7tEa0+ypQ0CDYUU/StXN
+8Tw+nqg8gTMto0IwQDAPBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwICBDAd
+BgNVHQ4EFgQUPBnxaL1wtHRLxWS1a8ZV7MWLaEcwCgYIKoZIzj0EAwIDZwAwZAIw
+AXurj8QcXr5vLuWrQbsMVf9c82M8hnFSWOFH9JKb+11EnGsrUH96n1ofCtSQXSXB
+AjB/sNl3hokdn0wKKpu69YqhqNNo/vXmkghq4tUPmVpsa1SEghNIaauNjIZchfTj
+kps=
+-----END CERTIFICATE-----
