@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ASPNetClient48", "ASPNetCli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetGrpc.Greeter", "AspNetGrpc.Greeter\AspNetGrpc.Greeter.csproj", "{6D7E2E6D-1675-4683-A13A-C799D9581F64}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetGrpc.GreeterClient48", "AspNetGrpc.GreeterClient48\AspNetGrpc.GreeterClient48.csproj", "{5B014584-3877-4595-9DF1-AEFF0D86622C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{6D7E2E6D-1675-4683-A13A-C799D9581F64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D7E2E6D-1675-4683-A13A-C799D9581F64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D7E2E6D-1675-4683-A13A-C799D9581F64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B014584-3877-4595-9DF1-AEFF0D86622C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B014584-3877-4595-9DF1-AEFF0D86622C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B014584-3877-4595-9DF1-AEFF0D86622C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B014584-3877-4595-9DF1-AEFF0D86622C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{FCDA5E28-0C59-466A-9944-6A2B19085885} = {6FE450FA-6287-4CBC-A799-2AD348701370}
 		{AA39C503-3644-4DDF-9E57-8D46CD2C66E8} = {6FE450FA-6287-4CBC-A799-2AD348701370}
 		{6D7E2E6D-1675-4683-A13A-C799D9581F64} = {6EF1A6DA-0612-45A4-A709-7F4E8ECD3ECD}
+		{5B014584-3877-4595-9DF1-AEFF0D86622C} = {6EF1A6DA-0612-45A4-A709-7F4E8ECD3ECD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FDC07EA3-B034-43BA-86E3-8CCFDD5909BC}
