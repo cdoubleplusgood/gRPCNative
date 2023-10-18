@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Net.Http;
 using Grpc.Net.Client;
+using Grpc.Net.Client.Web;
 
 namespace AspNetGrpc.GreeterClient48
 {
@@ -9,7 +11,12 @@ namespace AspNetGrpc.GreeterClient48
         {
             const int httpsPort = 7142;
             //const int httpPort = 5290;
-            using (var channel = GrpcChannel.ForAddress($"https://localhost:{httpsPort}"))
+            var httpHandler = new GrpcWebHandler(new HttpClientHandler());
+            var channelOptions = new GrpcChannelOptions
+            {
+                HttpHandler = httpHandler
+            };
+            using (var channel = GrpcChannel.ForAddress($"https://localhost:{httpsPort}", channelOptions))
             {
             }
 
