@@ -2,7 +2,7 @@ using AspNetGrpc.Greeter.Services;
 
 namespace AspNetGrpc.Greeter
 {
-    public class Program
+    public class ServerProgram
     {
         public static void Main(string[] args)
         {

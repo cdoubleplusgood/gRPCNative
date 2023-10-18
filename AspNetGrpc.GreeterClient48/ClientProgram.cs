@@ -8,7 +8,7 @@ using AspNetGrpc.Greeter;
 
 namespace AspNetGrpc.GreeterClient48
 {
-    internal class Program
+    internal class ClientProgram
     {
         static async Task Main()
         {
