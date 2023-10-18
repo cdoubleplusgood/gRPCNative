@@ -26,7 +26,7 @@ namespace AspNetGrpc.GreeterClient48
                 await UnaryAsync(channel, TimeSpan.FromSeconds(3.0));
                 await ServerStreamAsync(channel, TimeSpan.FromSeconds(10.0));
                 await ClientStreamAsync(channel);
-                //await DuplexStreamAsync(channel);
+                await DuplexStreamAsync(channel);
 
                 await ServerStreamWithCancellationAsync(channel);
             }
@@ -105,37 +105,38 @@ namespace AspNetGrpc.GreeterClient48
             Console.WriteLine($"Reply: {reply.Message}");
         }
 
-        //static async Task DuplexStreamAsync(GrpcChannel channel)
-        //{
-        //    var client = new Greeter.Greeter.GreeterClient(channel);
-        //    string[] names =
-        //    {
-        //        "Peter Parker",
-        //        "Tony Stark",
-        //        "Steve Rogers",
-        //        "Bruce Banner"
-        //    };
+        static async Task DuplexStreamAsync(GrpcChannel channel)
+        {
+            var client = new Greeter.Greeter.GreeterClient(channel);
+            string[] names =
+            {
+                "Peter Parker",
+                "Tony Stark",
+                "Steve Rogers",
+                "Bruce Banner"
+            };
 
-        //    Console.WriteLine("=== SayHelloToEveryone ===");
-        //    var duplexStreamingCall = client.SayHelloToEveryone();
-        //    var clientStream = duplexStreamingCall.RequestStream;
-        //    var serverStream = duplexStreamingCall.ResponseStream;
-        //    var responseTask = Task.Run(async () =>
-        //    {
-        //        await foreach (var reply in serverStream.ReadAllAsync())
-        //        {
-        //            Console.WriteLine($"Reply: {reply.Message}");
-        //        }
-        //    });
-        //    foreach (var name in names)
-        //    {
-        //        await Task.Delay(150);
-        //        Console.WriteLine($"Request: {name}");
-        //        await clientStream.WriteAsync(new HelloRequest { Name = name });
-        //    }
-        //    await clientStream.CompleteAsync();
-        //    await responseTask;
-        //}
+            Console.WriteLine("=== SayHelloToEveryone ===");
+            var duplexStreamingCall = client.SayHelloToEveryone();
+            var clientStream = duplexStreamingCall.RequestStream;
+            var serverStream = duplexStreamingCall.ResponseStream;
+            var responseTask = Task.Run(async () =>
+            {
+                while (await serverStream.MoveNext())
+                {
+                    var reply = serverStream.Current;
+                    Console.WriteLine($"Reply: {reply.Message}");
+                }
+            });
+            foreach (var name in names)
+            {
+                await Task.Delay(150);
+                Console.WriteLine($"Request: {name}");
+                await clientStream.WriteAsync(new HelloRequest { Name = name });
+            }
+            await clientStream.CompleteAsync();
+            await responseTask;
+        }
 
         static async Task ServerStreamWithCancellationAsync(GrpcChannel channel)
         {
