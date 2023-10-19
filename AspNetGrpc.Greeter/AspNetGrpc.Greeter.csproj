@@ -15,4 +15,26 @@
     <PackageReference Include="Grpc.AspNetCore.Web" Version="2.57.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="SSL\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="SSL\localhost-encrypted.key">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="SSL\localhost-selfsigned.crt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="SSL\localhost-selfsigned.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="SSL\localhost.crt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="SSL\localhost.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
