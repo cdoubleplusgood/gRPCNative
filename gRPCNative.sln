@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreetingService.Common", "GreetingService.Common\GreetingService.Common.csproj", "{033B10C7-5761-4CFA-91A0-0474311724AB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreetingService.Client", "GreetingService.Client\GreetingService.Client.csproj", "{FCDA5E28-0C59-466A-9944-6A2B19085885}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreetingService.Server", "GreetingService.Server\GreetingService.Server.csproj", "{AA39C503-3644-4DDF-9E57-8D46CD2C66E8}"
@@ -13,9 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "protobuf-net", "protobuf-ne
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ASPNetClient48", "ASPNetClient48", "{6EF1A6DA-0612-45A4-A709-7F4E8ECD3ECD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetGrpc.Greeter", "AspNetGrpc.Greeter\AspNetGrpc.Greeter.csproj", "{6D7E2E6D-1675-4683-A13A-C799D9581F64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetGrpc.Greeter", "AspNetGrpc.Greeter\AspNetGrpc.Greeter.csproj", "{6D7E2E6D-1675-4683-A13A-C799D9581F64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetGrpc.GreeterClient48", "AspNetGrpc.GreeterClient48\AspNetGrpc.GreeterClient48.csproj", "{5B014584-3877-4595-9DF1-AEFF0D86622C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetGrpc.GreeterClient48", "AspNetGrpc.GreeterClient48\AspNetGrpc.GreeterClient48.csproj", "{5B014584-3877-4595-9DF1-AEFF0D86622C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreetingService.Common", "GreetingService.Common\GreetingService.Common.csproj", "{C34B92E4-1D17-4F1C-AF9F-46DE026872EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{033B10C7-5761-4CFA-91A0-0474311724AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{033B10C7-5761-4CFA-91A0-0474311724AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{033B10C7-5761-4CFA-91A0-0474311724AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{033B10C7-5761-4CFA-91A0-0474311724AB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FCDA5E28-0C59-466A-9944-6A2B19085885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FCDA5E28-0C59-466A-9944-6A2B19085885}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCDA5E28-0C59-466A-9944-6A2B19085885}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -43,16 +39,20 @@ Global
 		{5B014584-3877-4595-9DF1-AEFF0D86622C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B014584-3877-4595-9DF1-AEFF0D86622C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B014584-3877-4595-9DF1-AEFF0D86622C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C34B92E4-1D17-4F1C-AF9F-46DE026872EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C34B92E4-1D17-4F1C-AF9F-46DE026872EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C34B92E4-1D17-4F1C-AF9F-46DE026872EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C34B92E4-1D17-4F1C-AF9F-46DE026872EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{033B10C7-5761-4CFA-91A0-0474311724AB} = {6FE450FA-6287-4CBC-A799-2AD348701370}
 		{FCDA5E28-0C59-466A-9944-6A2B19085885} = {6FE450FA-6287-4CBC-A799-2AD348701370}
 		{AA39C503-3644-4DDF-9E57-8D46CD2C66E8} = {6FE450FA-6287-4CBC-A799-2AD348701370}
 		{6D7E2E6D-1675-4683-A13A-C799D9581F64} = {6EF1A6DA-0612-45A4-A709-7F4E8ECD3ECD}
 		{5B014584-3877-4595-9DF1-AEFF0D86622C} = {6EF1A6DA-0612-45A4-A709-7F4E8ECD3ECD}
+		{C34B92E4-1D17-4F1C-AF9F-46DE026872EE} = {6FE450FA-6287-4CBC-A799-2AD348701370}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FDC07EA3-B034-43BA-86E3-8CCFDD5909BC}
