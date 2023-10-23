@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetGrpc.GreeterClient48"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreetingService.Common", "GreetingService.Common\GreetingService.Common.csproj", "{C34B92E4-1D17-4F1C-AF9F-46DE026872EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreetingService.Server6", "GreetingService.Server6\GreetingService.Server6.csproj", "{D512AF2E-3555-4D34-9B25-08C8A93E0F4B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{C34B92E4-1D17-4F1C-AF9F-46DE026872EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C34B92E4-1D17-4F1C-AF9F-46DE026872EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C34B92E4-1D17-4F1C-AF9F-46DE026872EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D512AF2E-3555-4D34-9B25-08C8A93E0F4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D512AF2E-3555-4D34-9B25-08C8A93E0F4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D512AF2E-3555-4D34-9B25-08C8A93E0F4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D512AF2E-3555-4D34-9B25-08C8A93E0F4B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{6D7E2E6D-1675-4683-A13A-C799D9581F64} = {6EF1A6DA-0612-45A4-A709-7F4E8ECD3ECD}
 		{5B014584-3877-4595-9DF1-AEFF0D86622C} = {6EF1A6DA-0612-45A4-A709-7F4E8ECD3ECD}
 		{C34B92E4-1D17-4F1C-AF9F-46DE026872EE} = {6FE450FA-6287-4CBC-A799-2AD348701370}
+		{D512AF2E-3555-4D34-9B25-08C8A93E0F4B} = {6FE450FA-6287-4CBC-A799-2AD348701370}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FDC07EA3-B034-43BA-86E3-8CCFDD5909BC}
