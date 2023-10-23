@@ -4,7 +4,8 @@
     {
         static void Main()
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("The client will stop now.");
+            Console.ReadKey();
         }
     }
 }
