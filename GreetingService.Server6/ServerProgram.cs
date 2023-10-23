@@ -1,6 +1,6 @@
 namespace GreetingService.Server6
 {
-    public class Program
+    public class ServerProgram
     {
         public static void Main(string[] args)
         {
