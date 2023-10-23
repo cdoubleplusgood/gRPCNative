@@ -13,10 +13,10 @@ namespace GreetingService.Client
         static async Task Main()
         {
             //GrpcClientFactory.AllowUnencryptedHttp2 = true;
-            var clientCert = File.ReadAllText("ssl/localhost2-chain.crt");
-            var clientKey = File.ReadAllText("ssl/localhost2.key");
+            //var clientCert = File.ReadAllText("ssl/localhost2-chain.crt");
+            //var clientKey = File.ReadAllText("ssl/localhost2.key");
             var caCert = File.ReadAllText("ssl/dev-root-ca.crt");
-            var channelCredentials = new SslCredentials(caCert, new KeyCertificatePair(clientCert, clientKey));
+            var channelCredentials = new SslCredentials(caCert);
 
             var channel = new Channel("localhost", 50051, channelCredentials);
             try

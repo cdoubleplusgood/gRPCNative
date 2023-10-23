@@ -15,9 +15,8 @@ namespace GreetingService.Server
             var serverCert = File.ReadAllText("ssl/localhost-chain.crt");
             var serverKey = File.ReadAllText("ssl/localhost.key");
             var keyPair = new KeyCertificatePair(serverCert, serverKey);
-            var caCert = File.ReadAllText("ssl/dev-root-ca.crt");
-            var credentials = new SslServerCredentials(new List<KeyCertificatePair> { keyPair },
-                caCert, SslClientCertificateRequestType.RequestAndRequireAndVerify);
+            //var caCert = File.ReadAllText("ssl/dev-root-ca.crt");
+            var credentials = new SslServerCredentials(new List<KeyCertificatePair> { keyPair });
 
             Grpc.Core.Server server = new Grpc.Core.Server
             {
