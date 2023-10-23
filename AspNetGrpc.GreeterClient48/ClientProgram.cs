@@ -14,7 +14,7 @@ namespace AspNetGrpc.GreeterClient48
     {
         static async Task Main()
         {
-            const int httpsPort = 7142;
+            const int httpsPort = 5001;
             //const int httpPort = 5113;
             var httpHandler = new GrpcWebHandler(new HttpClientHandler());
             var channelOptions = new GrpcChannelOptions
