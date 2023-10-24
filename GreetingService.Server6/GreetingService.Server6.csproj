@@ -15,4 +15,16 @@
     <ProjectReference Include="..\GreetingService.Common\GreetingService.Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="SSL\localhost-encrypted.key">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="SSL\localhost-selfsigned.crt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="SSL\localhost.crt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
