@@ -8,10 +8,9 @@ namespace GreetingService.Client6
     {
         static async Task Main()
         {
-            using (var channel = GrpcChannel.ForAddress("http://localhost:5151"))
+            using (var channel = GrpcChannel.ForAddress("https://localhost:50051"))
             {
                 var client = channel.CreateGrpcService<IGreetingService>();
-                var greetingService = channel.CreateGrpcService<IGreetingService>();
 
                 var greetingRequest = new GreetingRequest
                 {
@@ -25,7 +24,7 @@ namespace GreetingService.Client6
                 Console.WriteLine("GreetRequest: " +
                                   $"{greetingRequest.Greeting.FirstName} " +
                                   $"{greetingRequest.Greeting.LastName}");
-                var response = await greetingService.Greet(greetingRequest);
+                var response = await client.Greet(greetingRequest);
                 Console.WriteLine($"GreetResponse: {response.Response}");
 
                 var greetOftenRequest = new GreetOftenRequest
@@ -42,7 +41,7 @@ namespace GreetingService.Client6
                                   $"{greetOftenRequest.Greeting.FirstName} " +
                                   $"{greetOftenRequest.Greeting.LastName} " +
                                   $"{greetOftenRequest.Count}");
-                var streamResponse = greetingService.GreetOften(greetOftenRequest);
+                var streamResponse = client.GreetOften(greetOftenRequest);
                 await foreach (var response2 in streamResponse)
                 {
                     Console.WriteLine($"GreetResponse: {response2.Response}");
@@ -56,7 +55,7 @@ namespace GreetingService.Client6
                 };
                 Console.WriteLine("GreetAll");
                 var greetAllResponse =
-                    await greetingService.GreetAll(ToAsyncEnumerable(greetingRequests, async g =>
+                    await client.GreetAll(ToAsyncEnumerable(greetingRequests, async g =>
                     {
                         Console.WriteLine("GreetRequest: " +
                                           $"{g.Greeting.FirstName} " +
